@@ -1,0 +1,44 @@
+header {
+    background: #68019f;
+    color: white;
+}
+
+h1 {
+    margin: 0 0 0.25rem 0;;
+}
+
+button {
+    background: #FBFBFB;
+    border: 1px solid transparent;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+button svg {
+    font-size: 1.25rem;
+    color: #68019f;
+}
+
+button:hover {
+    background: #fbfbfb;
+    border: 2px solid gold;
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-wrapper svg {
+    font-size: 2rem;
+}
