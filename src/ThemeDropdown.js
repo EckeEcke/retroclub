@@ -13,7 +13,7 @@ const ThemeDropdown = () => {
   return (
     <div class="theme-dropdown">
         <select id="theme-dropdown" value={selectedTheme} onChange={handleChange}>
-            <option value="" disabled>Select a theme</option>
+            <option value="" disabled>Wähle ein Thema</option>
             {themes.map((theme, index) => (
             <option key={index} value={theme}>
                 {theme}
