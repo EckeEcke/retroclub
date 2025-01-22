@@ -1,0 +1,21 @@
+.game-card {
+    max-width: 500px;
+}
+
+img {
+    width: 100%;
+}
+
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.platform-span {
+    background: lightgray;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    font-size: 0.75rem;
+}
