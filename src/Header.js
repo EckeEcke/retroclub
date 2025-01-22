@@ -7,7 +7,7 @@ function Header() {
       <div class="container">
         <div class="logo-wrapper">
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
-          <h1>Retroklub</h1>
+          <h1>Retroclub</h1>
         </div>
         <button>
           <FontAwesomeIcon icon="fa-solid fa-user" />
