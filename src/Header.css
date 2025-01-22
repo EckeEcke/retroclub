@@ -44,3 +44,81 @@ button:hover {
 .logo-wrapper svg {
     font-size: 2rem;
 }
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: black;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
+  .modal h2 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal input {
+    font-size: 1.5rem;
+    height: 2rem;
+    padding: 1rem;
+  }
+
+  .modal input:focus,
+  .modal input:focus-visible {
+    border-color: #68019f;
+    outline-color: #68019f;
+    caret-color: #68019f;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  form button {
+    background: #68019f;
+    color: white;
+    border-radius: 0.25rem;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  form button:hover {
+    transform: scale(1.05);
+    background: darkmagenta;
+    border: none;
+  }

@@ -1,6 +1,7 @@
 .tile-container {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
+    row-gap: 8rem;
     flex-wrap: wrap;
 }
 
