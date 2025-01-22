@@ -1,6 +1,7 @@
 .tile-container {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
 .game-card {
@@ -16,7 +17,7 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    height: 200px; /* Set the desired height for all images */
+    height: 200px;
 }
   
 .image-container img {
@@ -36,29 +37,6 @@
     border-radius: 0.5rem;
     white-space: nowrap;
     font-size: 0.75rem;
-}
-
-.like {
-    background: green;
-    border-radius: 50%;
-    padding: 1rem;
-    color: white;
-    width: 1rem;
-}
-
-.dislike {
-    background: red;
-    border-radius: 50%;
-    padding: 1rem;
-    color: white;
-    width: 1rem;
-}
-
-.ratings-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    align-self: baseline;
 }
 
 .ratings {

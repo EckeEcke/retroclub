@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Header() {
   return (
     <header>
-      <div class="container">
+      <div class="container container-header">
         <div class="logo-wrapper">
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
           <h1>Retroclub</h1>

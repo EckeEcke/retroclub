@@ -1,0 +1,18 @@
+.theme-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2rem;
+}
+
+.theme-dropdown h2 {
+    margin: 1rem 0 0.25rem;
+    font-size: 3rem; 
+}
+
+select {
+    width: 200px;
+    padding: 0.5rem;
+}

@@ -154,4 +154,139 @@ const gameData = [{
     ],
     site_detail_url: "https://www.giantbomb.com/muscle-march/3030-26450/",
     resource_type: "game"
-    }]
+    },
+    {
+      aliases: "ET",
+      api_detail_url: "https://www.giantbomb.com/api/game/3030-21595/",
+      date_added: "2008-07-26 11:53:01",
+      date_last_updated: "2017-12-30 08:36:36",
+      deck: "E.T. The Extra-Terrestrial is an adventure game based on the film of the same name. Its major commercial failure is considered an important factor of the Video Game Crash of 1983 and the collapse of Atari, Inc.",
+      expected_release_day: null,
+      expected_release_month: null,
+      expected_release_quarter: 4,
+      expected_release_year: 1982,
+      guid: "3030-21595",
+      id: 21595,
+      image: {
+      icon_url: "https://www.giantbomb.com/a/uploads/square_avatar/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      medium_url: "https://www.giantbomb.com/a/uploads/scale_medium/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      screen_url: "https://www.giantbomb.com/a/uploads/screen_medium/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      screen_large_url: "https://www.giantbomb.com/a/uploads/screen_kubrick/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      small_url: "https://www.giantbomb.com/a/uploads/scale_small/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      super_url: "https://www.giantbomb.com/a/uploads/scale_large/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      thumb_url: "https://www.giantbomb.com/a/uploads/scale_avatar/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      tiny_url: "https://www.giantbomb.com/a/uploads/square_mini/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      original_url: "https://www.giantbomb.com/a/uploads/original/9/93770/2367692-a2600_ettheextraterrestrial.jpg",
+      image_tags: "All Images,Box Art"
+      },
+      image_tags: [
+      {
+      api_detail_url: "https://www.giantbomb.com/api/images/3030-21595/?filter=image_tag:All%20Images",
+      name: "All Images",
+      total: 16
+      },
+      {
+      api_detail_url: "https://www.giantbomb.com/api/images/3030-21595/?filter=image_tag:advertisement",
+      name: "advertisement",
+      total: 1
+      },
+      {
+      api_detail_url: "https://www.giantbomb.com/api/images/3030-21595/?filter=image_tag:Box%20Art",
+      name: "Box Art",
+      total: 5
+      },
+      {
+      api_detail_url: "https://www.giantbomb.com/api/images/3030-21595/?filter=image_tag:Cartage",
+      name: "Cartage",
+      total: 1
+      },
+      {
+      api_detail_url: "https://www.giantbomb.com/api/images/3030-21595/?filter=image_tag:Screenshots",
+      name: "Screenshots",
+      total: 6
+      }
+      ],
+      name: "E.T. the Extra-Terrestrial",
+      number_of_user_reviews: 0,
+      original_game_rating: null,
+      original_release_date: null,
+      platforms: [
+      {
+      api_detail_url: "https://www.giantbomb.com/api/platform/3045-40/",
+      id: 40,
+      name: "Atari 2600",
+      site_detail_url: "https://www.giantbomb.com/atari-2600/3045-40/",
+      abbreviation: "2600"
+      }
+      ],
+      site_detail_url: "https://www.giantbomb.com/et-the-extra-terrestrial/3030-21595/",
+      resource_type: "game"
+      },
+      {
+        aliases: null,
+        api_detail_url: "https://www.giantbomb.com/api/game/3030-19987/",
+        date_added: "2008-04-01 16:51:14",
+        date_last_updated: "2015-01-08 03:38:29",
+        deck: "Big Rigs: Over The Road Racing is an infamous truck racing title developed by Stellar Stone LLC, and is widely regarded as the worst video game ever made. Since its release in 2003, the game has developed a cult-like following, mostly due to Alex Navarro's review for GameSpot.",
+        expected_release_day: null,
+        expected_release_month: null,
+        expected_release_quarter: null,
+        expected_release_year: null,
+        guid: "3030-19987",
+        id: 19987,
+        image: {
+        icon_url: "https://www.giantbomb.com/a/uploads/square_avatar/0/54/188200-big_rigs_boxart.jpg",
+        medium_url: "https://www.giantbomb.com/a/uploads/scale_medium/0/54/188200-big_rigs_boxart.jpg",
+        screen_url: "https://www.giantbomb.com/a/uploads/screen_medium/0/54/188200-big_rigs_boxart.jpg",
+        screen_large_url: "https://www.giantbomb.com/a/uploads/screen_kubrick/0/54/188200-big_rigs_boxart.jpg",
+        small_url: "https://www.giantbomb.com/a/uploads/scale_small/0/54/188200-big_rigs_boxart.jpg",
+        super_url: "https://www.giantbomb.com/a/uploads/scale_large/0/54/188200-big_rigs_boxart.jpg",
+        thumb_url: "https://www.giantbomb.com/a/uploads/scale_avatar/0/54/188200-big_rigs_boxart.jpg",
+        tiny_url: "https://www.giantbomb.com/a/uploads/square_mini/0/54/188200-big_rigs_boxart.jpg",
+        original_url: "https://www.giantbomb.com/a/uploads/original/0/54/188200-big_rigs_boxart.jpg",
+        image_tags: "All Images,Box Art"
+        },
+        image_tags: [
+        {
+        api_detail_url: "https://www.giantbomb.com/api/images/3030-19987/?filter=image_tag:All%20Images",
+        name: "All Images",
+        total: 57
+        },
+        {
+        api_detail_url: "https://www.giantbomb.com/api/images/3030-19987/?filter=image_tag:Box%20Art",
+        name: "Box Art",
+        total: 3
+        },
+        {
+        api_detail_url: "https://www.giantbomb.com/api/images/3030-19987/?filter=image_tag:PC%20Screenshots",
+        name: "PC Screenshots",
+        total: 48
+        },
+        {
+        api_detail_url: "https://www.giantbomb.com/api/images/3030-19987/?filter=image_tag:Screenshots",
+        name: "Screenshots",
+        total: 51
+        }
+        ],
+        name: "Big Rigs: Over the Road Racing",
+        number_of_user_reviews: 0,
+        original_game_rating: [
+        {
+        api_detail_url: "https://www.giantbomb.com/api/game_rating/3065-6/",
+        id: 6,
+        name: "ESRB: E"
+        }
+        ],
+        original_release_date: "2003-11-20",
+        platforms: [
+        {
+        api_detail_url: "https://www.giantbomb.com/api/platform/3045-94/",
+        id: 94,
+        name: "PC",
+        site_detail_url: "https://www.giantbomb.com/pc/3045-94/",
+        abbreviation: "PC"
+        }
+        ],
+        site_detail_url: "https://www.giantbomb.com/big-rigs-over-the-road-racing/3030-19987/",
+        resource_type: "game"
+        },]
