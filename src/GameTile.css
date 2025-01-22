@@ -1,9 +1,27 @@
-.game-card {
-    max-width: 500px;
+.tile-container {
+    display: flex;
+    gap: 2rem;
 }
 
-img {
+.game-card {
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 200px; /* Set the desired height for all images */
+}
+  
+.image-container img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .platforms {
@@ -13,9 +31,64 @@ img {
 }
 
 .platform-span {
-    background: lightgray;
+    background: rgb(214, 212, 214);
     padding: 0.5rem;
     border-radius: 0.5rem;
     white-space: nowrap;
     font-size: 0.75rem;
+}
+
+.like {
+    background: green;
+    border-radius: 50%;
+    padding: 1rem;
+    color: white;
+    width: 1rem;
+}
+
+.dislike {
+    background: red;
+    border-radius: 50%;
+    padding: 1rem;
+    color: white;
+    width: 1rem;
+}
+
+.ratings-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-self: baseline;
+}
+
+.ratings {
+    margin-top: auto;
+}
+
+.rating h3 {
+    margin: 0;
+}
+
+.release-year {
+    font-size: 1rem;
+    color: rgb(14, 12, 12);
+    margin-bottom: 1rem;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: semibold;
+}
+th, td {
+    border: 1px solid #68019f;
+    border-top: transparent;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #68019f;
+    color: white;
 }
