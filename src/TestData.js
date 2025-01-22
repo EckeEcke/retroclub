@@ -289,4 +289,247 @@ const gameData = [{
         ],
         site_detail_url: "https://www.giantbomb.com/big-rigs-over-the-road-racing/3030-19987/",
         resource_type: "game"
-        },]
+        },
+        {
+          aliases: "SMB",
+          api_detail_url: "https://www.giantbomb.com/api/game/3030-15544/",
+          date_added: "2008-04-01 16:21:45",
+          date_last_updated: "2022-11-01 17:17:51",
+          deck: "Focusing on a humble plumber and his brother setting out to rescue a Princess who has been kidnapped by a vile lizard king, Super Mario Bros. is a platformer created by Shigeru Miyamoto, published by Nintendo, and is one of the best-selling video games of all time.",
+          expected_release_day: null,
+          expected_release_month: null,
+          expected_release_quarter: null,
+          expected_release_year: null,
+          guid: "3030-15544",
+          id: 15544,
+          image: {
+          icon_url: "https://www.giantbomb.com/a/uploads/square_avatar/9/93770/2362267-nes_supermariobros.jpg",
+          medium_url: "https://www.giantbomb.com/a/uploads/scale_medium/9/93770/2362267-nes_supermariobros.jpg",
+          screen_url: "https://www.giantbomb.com/a/uploads/screen_medium/9/93770/2362267-nes_supermariobros.jpg",
+          screen_large_url: "https://www.giantbomb.com/a/uploads/screen_kubrick/9/93770/2362267-nes_supermariobros.jpg",
+          small_url: "https://www.giantbomb.com/a/uploads/scale_small/9/93770/2362267-nes_supermariobros.jpg",
+          super_url: "https://www.giantbomb.com/a/uploads/scale_large/9/93770/2362267-nes_supermariobros.jpg",
+          thumb_url: "https://www.giantbomb.com/a/uploads/scale_avatar/9/93770/2362267-nes_supermariobros.jpg",
+          tiny_url: "https://www.giantbomb.com/a/uploads/square_mini/9/93770/2362267-nes_supermariobros.jpg",
+          original_url: "https://www.giantbomb.com/a/uploads/original/9/93770/2362267-nes_supermariobros.jpg",
+          image_tags: "All Images,Box Art"
+          },
+          image_tags: [
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:All%20Images",
+          name: "All Images",
+          total: 47
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:Box%20Art",
+          name: "Box Art",
+          total: 6
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:Development",
+          name: "Development",
+          total: 1
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:FDS%20Screenshots",
+          name: "FDS Screenshots",
+          total: 1
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:NES%20Screenshots",
+          name: "NES Screenshots",
+          total: 34
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:PAX%20East%202010",
+          name: "PAX East 2010",
+          total: 2
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/images/3030-15544/?filter=image_tag:Screenshots",
+          name: "Screenshots",
+          total: 35
+          }
+          ],
+          name: "Super Mario Bros.",
+          number_of_user_reviews: 0,
+          original_game_rating: [
+          {
+          api_detail_url: "https://www.giantbomb.com/api/game_rating/3065-19/",
+          id: 19,
+          name: "CERO: All Ages"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/game_rating/3065-6/",
+          id: 6,
+          name: "ESRB: E"
+          }
+          ],
+          original_release_date: "1985-09-13",
+          platforms: [
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-4/",
+          id: 4,
+          name: "Game Boy Advance",
+          site_detail_url: "https://www.giantbomb.com/game-boy-advance/3045-4/",
+          abbreviation: "GBA"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-21/",
+          id: 21,
+          name: "Nintendo Entertainment System",
+          site_detail_url: "https://www.giantbomb.com/nintendo-entertainment-system/3045-21/",
+          abbreviation: "NES"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-84/",
+          id: 84,
+          name: "Arcade",
+          site_detail_url: "https://www.giantbomb.com/arcade/3045-84/",
+          abbreviation: "ARC"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-87/",
+          id: 87,
+          name: "Wii Shop",
+          site_detail_url: "https://www.giantbomb.com/wii-shop/3045-87/",
+          abbreviation: "WSHP"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-91/",
+          id: 91,
+          name: "Famicom Disk System",
+          site_detail_url: "https://www.giantbomb.com/famicom-disk-system/3045-91/",
+          abbreviation: "FDS"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-138/",
+          id: 138,
+          name: "Nintendo 3DS eShop",
+          site_detail_url: "https://www.giantbomb.com/nintendo-3ds-eshop/3045-138/",
+          abbreviation: "3DSE"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-139/",
+          id: 139,
+          name: "Wii U",
+          site_detail_url: "https://www.giantbomb.com/wii-u/3045-139/",
+          abbreviation: "WiiU"
+          },
+          {
+          api_detail_url: "https://www.giantbomb.com/api/platform/3045-157/",
+          id: 157,
+          name: "Nintendo Switch",
+          site_detail_url: "https://www.giantbomb.com/nintendo-switch/3045-157/",
+          abbreviation: "NSW"
+          }
+          ],
+          site_detail_url: "https://www.giantbomb.com/super-mario-bros/3030-15544/",
+          resource_type: "game"
+          },
+          {
+            aliases: "Super Mario USA Super Mario Bros. USA SMB2",
+            api_detail_url: "https://www.giantbomb.com/api/game/3030-7406/",
+            date_added: "2008-04-01 15:41:56",
+            date_last_updated: "2024-09-29 06:05:09",
+            deck: "Mario and his friends find themselves in the mysterious world of Sub-Con, where they must fight new enemies (with new techniques) to stop the master plans of the evil toad king, Wart.",
+            expected_release_day: null,
+            expected_release_month: null,
+            expected_release_quarter: 4,
+            expected_release_year: 1988,
+            guid: "3030-7406",
+            id: 7406,
+            image: {
+            icon_url: "https://www.giantbomb.com/a/uploads/square_avatar/9/93770/2362269-nes_supermariobros2.jpg",
+            medium_url: "https://www.giantbomb.com/a/uploads/scale_medium/9/93770/2362269-nes_supermariobros2.jpg",
+            screen_url: "https://www.giantbomb.com/a/uploads/screen_medium/9/93770/2362269-nes_supermariobros2.jpg",
+            screen_large_url: "https://www.giantbomb.com/a/uploads/screen_kubrick/9/93770/2362269-nes_supermariobros2.jpg",
+            small_url: "https://www.giantbomb.com/a/uploads/scale_small/9/93770/2362269-nes_supermariobros2.jpg",
+            super_url: "https://www.giantbomb.com/a/uploads/scale_large/9/93770/2362269-nes_supermariobros2.jpg",
+            thumb_url: "https://www.giantbomb.com/a/uploads/scale_avatar/9/93770/2362269-nes_supermariobros2.jpg",
+            tiny_url: "https://www.giantbomb.com/a/uploads/square_mini/9/93770/2362269-nes_supermariobros2.jpg",
+            original_url: "https://www.giantbomb.com/a/uploads/original/9/93770/2362269-nes_supermariobros2.jpg",
+            image_tags: "All Images,Box Art"
+            },
+            image_tags: [
+            {
+            api_detail_url: "https://www.giantbomb.com/api/images/3030-7406/?filter=image_tag:All%20Images",
+            name: "All Images",
+            total: 72
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/images/3030-7406/?filter=image_tag:Artwork",
+            name: "Artwork",
+            total: 46
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/images/3030-7406/?filter=image_tag:Box%20Art",
+            name: "Box Art",
+            total: 4
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/images/3030-7406/?filter=image_tag:NES%20Screenshots",
+            name: "NES Screenshots",
+            total: 19
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/images/3030-7406/?filter=image_tag:Screenshots",
+            name: "Screenshots",
+            total: 18
+            }
+            ],
+            name: "Super Mario Bros. 2",
+            number_of_user_reviews: 0,
+            original_game_rating: [
+            {
+            api_detail_url: "https://www.giantbomb.com/api/game_rating/3065-6/",
+            id: 6,
+            name: "ESRB: E"
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/game_rating/3065-19/",
+            id: 19,
+            name: "CERO: All Ages"
+            }
+            ],
+            original_release_date: null,
+            platforms: [
+            {
+            api_detail_url: "https://www.giantbomb.com/api/platform/3045-21/",
+            id: 21,
+            name: "Nintendo Entertainment System",
+            site_detail_url: "https://www.giantbomb.com/nintendo-entertainment-system/3045-21/",
+            abbreviation: "NES"
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/platform/3045-87/",
+            id: 87,
+            name: "Wii Shop",
+            site_detail_url: "https://www.giantbomb.com/wii-shop/3045-87/",
+            abbreviation: "WSHP"
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/platform/3045-138/",
+            id: 138,
+            name: "Nintendo 3DS eShop",
+            site_detail_url: "https://www.giantbomb.com/nintendo-3ds-eshop/3045-138/",
+            abbreviation: "3DSE"
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/platform/3045-139/",
+            id: 139,
+            name: "Wii U",
+            site_detail_url: "https://www.giantbomb.com/wii-u/3045-139/",
+            abbreviation: "WiiU"
+            },
+            {
+            api_detail_url: "https://www.giantbomb.com/api/platform/3045-157/",
+            id: 157,
+            name: "Nintendo Switch",
+            site_detail_url: "https://www.giantbomb.com/nintendo-switch/3045-157/",
+            abbreviation: "NSW"
+            }
+            ],
+            site_detail_url: "https://www.giantbomb.com/super-mario-bros-2/3030-7406/",
+            resource_type: "game"
+            },]

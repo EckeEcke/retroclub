@@ -24,7 +24,7 @@ const GamingTile = () => {
             ))}
           </div>
           <div class="ratings">
-          <h2>Bewertungen</h2>
+          <h3>Bewertungen</h3>
           <table>
             <thead>
               <tr>
