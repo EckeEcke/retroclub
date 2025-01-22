@@ -19,8 +19,8 @@ function Header() {
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
           <h1>Retroclub</h1>
         </div>
-        <button>
-          <FontAwesomeIcon icon="fa-solid fa-user" onClick={openModal} />
+        <button onClick={openModal}>
+          <FontAwesomeIcon icon="fa-solid fa-user" />
         </button>
       </div>
       {isOpen && (
