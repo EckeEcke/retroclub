@@ -18,7 +18,7 @@ function App() {
       const response = await fetch('/api/addgames', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: ['123'] })
+        body: JSON.stringify({ ids: ['3030-7406'] })
       })
       const data = await response.json()
       console.log(data)
