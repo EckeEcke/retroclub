@@ -11,7 +11,7 @@ const GamingTile = () => {
 
   const getPublishers = (publishers) => {
     if (!publishers) return ''
-    return publishers.map(publisher => publisher.name).join(', ')
+    return publishers.slice(0,2).map((publisher) => publisher.name).join(', ')
   }
 
   return (
@@ -45,18 +45,18 @@ const GamingTile = () => {
                 <tbody>
                   <tr>
                     <td>Lena</td>
-                    <td>10</td>
-                    <td>10</td>
+                    <td>{game.ratings ? game.ratings.Lena : '?'}</td>
+                    <td>{game.ratings ? game.ratings.Lena : '?'}</td>
                   </tr>
                   <tr>
                     <td>Rene</td>
-                    <td>10</td>
-                    <td>10</td>
+                    <td>{game.ratings ? game.ratings.Rene : '?'}</td>
+                    <td>{game.ratings ? game.ratings.Rene : '?'}</td>
                   </tr>
                   <tr>
                     <td>Chris</td>
-                    <td>10</td>
-                    <td>10</td>
+                    <td>{game.ratings ? game.ratings.Chris : '?'}</td>
+                    <td>{game.ratings ? game.ratings.Chris : '?'}</td>
                   </tr>
                 </tbody>
               </table>
