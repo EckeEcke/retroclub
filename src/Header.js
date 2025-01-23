@@ -2,7 +2,7 @@ import './Header.css'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Header() {
+  function Header() {
     const [isOpen, setIsOpen] = useState(false)
   
     const openModal = () => {
@@ -12,6 +12,25 @@ function Header() {
     const closeModal = () => {
       setIsOpen(false)
     }
+
+    const [password, setPassword] = useState('')
+    const [message, setMessage] = useState('')
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const response = await fetch('/api/authentication', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    })
+    const data = await response.json()
+    if (response.ok) {
+      setMessage(`Key: ${data.key}`)
+    } else {
+      setMessage(`Error: ${data.error}`)
+    }
+  }
+
   return (
     <header>
       <div class="container container-header">
@@ -28,9 +47,17 @@ function Header() {
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
             <h2>Anmelden</h2>
-            <form>
-              <input placeholder="Passwort eingeben" type="text" />
+            <form onSubmit={handleSubmit}>
+              <input 
+                placeholder="Passwort eingeben" 
+                type="password" 
+                id="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                required
+              />
               <button type="submit">Senden</button>
+              {message && <p>{message}</p>}
             </form>
             
           </div>
