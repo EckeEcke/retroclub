@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './GameTile.css'
 import { useThemeStore } from './store'
+import RatingModal from './RatingModal'
 
 const GamingTile = () => {
+  const [modalGame, setModalGame] = useState(null)
+
+  const openModal = (game) => {
+    setModalGame(game)
+  }
+
+  const closeModal = () => {
+    setModalGame(null)
+  }
+
   const games = useThemeStore((state) => state.selectedThemeGames)
   const name = useThemeStore((state) => state.name)
 
@@ -69,6 +80,13 @@ const GamingTile = () => {
         ))
       ) : (
         <p>Noch kein Thema ausgewählt</p>
+      )}
+      {modalGame && (
+        <RatingModal
+          game={modalGame}
+          isOpen={!!modalGame}
+          onClose={closeModal}
+        />
       )}
     </div>
   )
