@@ -64,7 +64,7 @@ const GamingTile = () => {
           </div>
         ))
       ) : (
-        <p>No games found for the selected theme.</p>
+        <p>Noch kein Thema ausgewählt</p>
       )}
     </div>
   )
