@@ -12,6 +12,20 @@ function App() {
       .then(response => response.json())
       .then(data => console.log(data.message))
   }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/api/fetchGames', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: ['123'] })
+      })
+      const data = await response.json()
+      console.log(data)
+    }
+
+    fetchData()
+  }, [])
   return (
     <div className="App">
       <Header />

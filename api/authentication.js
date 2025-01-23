@@ -13,11 +13,15 @@ export default function handler(req, res) {
   
     const passwordLena = process.env.PASSWORD_LENA
     const keyLena = process.env.KEY_LENA
+    const passwordRene = process.env.PASSWORD_RENE
+    const keyRene = process.env.KEY_RENE
     const passwordChris = process.env.PASSWORD_CHRIS
     const keyChris = process.env.KEY_CHRIS
   
     if (password === passwordLena) {
       res.status(200).json({ key: keyLena })
+    } else if (password === passwordRene) {
+        res.status(200).json({ key: keyRene })
     } else if (password === passwordChris) {
       res.status(200).json({ key: keyChris })
     } else {
