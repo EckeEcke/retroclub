@@ -56,7 +56,7 @@ export default async function handler(req, res) {
       const newGames = await Promise.all(ids.map(async (id) => {
         const response = await fetch(`https://www.giantbomb.com/api/game/${id}/?api_key=${apiKey}&format=json`)
         const data = await response.json()
-        return data.results
+        return data
       }))
 
       const gamesToAdd = newGames.filter(newGame => !existingTheme.games.some(existingGame => existingGame.id === newGame.id))
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
       const games = await Promise.all(ids.map(async (id) => {
         const response = await fetch(`https://www.giantbomb.com/api/game/${id}/?api_key=${apiKey}&format=json`)
         const data = await response.json()
-        return data.results
+        return data
       }))
 
       const document = {
