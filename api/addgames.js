@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       return
     }
   
-    const apiKey = process.env.GIANT_BOMB_API_KEY
+    const apiKey = process.env.REACT_APP_GIANT_BOMB_API_KEY
   
     try {
       // Use dynamic import for node-fetch
