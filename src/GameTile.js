@@ -4,6 +4,7 @@ import { useThemeStore } from './store'
 
 const GamingTile = () => {
   const games = useThemeStore((state) => state.selectedThemeGames)
+  const name = useThemeStore((state) => state.name)
 
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -33,6 +34,9 @@ const GamingTile = () => {
               ))}
             </div>
             <div className="ratings">
+              {name && !game.ratings?.[name] && (
+                <button className="rating-button">Bewerten</button>
+              )}
               <h3>Bewertungen</h3>
               <table>
                 <thead>

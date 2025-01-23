@@ -31,8 +31,9 @@ import { useThemeStore } from './store'
       setMessage(`Moin ${data.name}! Dein Key ist ${data.key}`)
       setKey(data.key)
       setName(data.name)
+      setTimeout(() => closeModal(), 1000)
     } else {
-      setMessage(`Error: ${data.error}`)
+      setMessage(`Fehler: ${data.error}`)
     }
   }
 
