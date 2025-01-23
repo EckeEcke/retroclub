@@ -35,11 +35,11 @@
     cursor: pointer;
   }
   
-  h2 {
+  .modal h2 {
     text-align: center;
   }
   
-  img {
+  .modal img {
     display: block;
     margin-left: auto;
     margin-right: auto;

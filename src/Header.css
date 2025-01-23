@@ -9,7 +9,7 @@ h1 {
     margin: 0;
 }
 
-header button {
+.container-header button {
     background: #FBFBFB;
     border: 1px solid transparent;
     height: 2rem;
@@ -18,12 +18,12 @@ header button {
     transition: all 0.3s;
 }
 
-header button svg {
+.container-header button svg {
     font-size: 1.25rem;
     color: #68019f;
 }
 
-header button:hover {
+.container-header button:hover {
     background: #fbfbfb;
     border: 2px solid gold;
     transform: scale(1.1);
