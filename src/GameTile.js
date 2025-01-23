@@ -7,6 +7,11 @@ const GamingTile = () => {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
+  const getPublishers = (publishers) => {
+    if(!publishers) return ''
+    return publishers.map(publisher => publisher.name).join(', ')
+  }
+
   return (
     <div class="tile-container">
       {gameData.map((game, index) => (
@@ -17,6 +22,7 @@ const GamingTile = () => {
           <h2 class="game-tile-headline" onClick={() => openInNewTab(game.site_detail_url)}>{game.name}</h2>
           <div className="release-year">
             veröffentlicht {game.expected_release_year ? game.expected_release_year : game.original_release_date.slice(0,4)}
+            {getPublishers(game.publishers).length > 0 ? ` | ${getPublishers(game.publishers)}` : ''}
           </div>
           <div className="platforms">
             {game.platforms.map(platform => (

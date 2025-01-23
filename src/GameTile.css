@@ -6,7 +6,7 @@
 }
 
 .game-card {
-    width: 300px;
+    width: 100%;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,4 +76,34 @@ th, td {
 th {
     background-color: #68019f;
     color: white;
+}
+
+
+
+.tile-container {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .tile-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tile-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .tile-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 450px) {
+    .game-card {
+        width: 300px;
+    }
 }

@@ -4,17 +4,16 @@ export default async function handler(req, res) {
       return
     }
   
-    const { ids } = req.body
+    const { theme, ids } = req.body
   
-    if (!Array.isArray(ids)) {
-      res.status(400).json({ error: 'Ids should be an array' })
+    if (!Array.isArray(ids) || !theme) {
+      res.status(400).json({ error: 'A theme name should be added and Ids should be an array' })
       return
     }
   
     const apiKey = process.env.REACT_APP_GIANT_BOMB_API_KEY
   
     try {
-      // Use dynamic import for node-fetch
       const fetch = (await import('node-fetch')).default
   
       const results = await Promise.all(ids.map(async (id) => {
@@ -23,7 +22,10 @@ export default async function handler(req, res) {
         return data
       }))
   
-      res.status(200).json(results)
+      res.status(200).json({
+        name: theme,
+        games: results
+    })
     } catch (error) {
       console.error(error)
       res.status(500).json({ error: 'Failed to fetch data' })
