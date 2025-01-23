@@ -28,7 +28,7 @@ import { useThemeStore } from './store'
     })
     const data = await response.json()
     if (response.ok) {
-      setMessage(`Moin ${data.name}! Dein Key ist ${data.key}`)
+      setMessage(`Moin ${data.name}!`)
       setKey(data.key)
       setName(data.name)
       setTimeout(() => closeModal(), 1000)
