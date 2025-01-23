@@ -56,10 +56,10 @@ export default async function handler(req, res) {
       const newGames = await Promise.all(ids.map(async (id) => {
         const response = await fetch(`https://www.giantbomb.com/api/game/${id}/?api_key=${apiKey}&format=json`)
         const data = await response.json()
-        return data
+        return data.results
       }))
 
-      const gamesToAdd = newGames.filter(newGame => !existingTheme.games.some(existingGame => existingGame.id === newGame.id))
+      const gamesToAdd = newGames.filter(newGame => !existingTheme.games.some(existingGame => existingGame.id === newGame.id) && newGame.name)
 
       if (gamesToAdd.length > 0) {
         await collection.updateOne(
@@ -73,12 +73,12 @@ export default async function handler(req, res) {
       const games = await Promise.all(ids.map(async (id) => {
         const response = await fetch(`https://www.giantbomb.com/api/game/${id}/?api_key=${apiKey}&format=json`)
         const data = await response.json()
-        return data
+        return data.results
       }))
 
       const document = {
         name: theme,
-        games: games
+        games: games.filter(game => game.name)
       }
 
       await collection.insertOne(document)
