@@ -3,6 +3,7 @@ import './RatingModal.css'
 import { useThemeStore } from './store'
 
 const RatingModal = ({ game, isOpen, onClose }) => {
+  const theme = useThemeStore((state) => state.selectedTheme)
   const [gesamt, setGesamt] = useState(0)
   const [thema, setThema] = useState(0)
   const key = useThemeStore((state) => state.key)
@@ -14,6 +15,13 @@ const RatingModal = ({ game, isOpen, onClose }) => {
       total: gesamt,
       theme: thema
     }
+
+    console.log({
+        themeName: theme,
+        gameId: game.id,
+        key,
+        rating
+      })
 
     const response = await fetch('/api/addRating', {
       method: 'POST',
