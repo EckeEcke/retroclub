@@ -45,8 +45,8 @@ const GamingTile = () => {
               ))}
             </div>
             <div className="ratings">
-              {name && !game.ratings?.[name] && (
-                <button className="rating-button">Bewerten</button>
+              {!game.ratings?.Chris && (
+                <button className="rating-button" onClick={() => openModal(game)}>Bewerten</button>
               )}
               <h3>Bewertungen</h3>
               <table>
