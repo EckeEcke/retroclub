@@ -1,26 +1,35 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './ThemeDropdown.css'
-
-const themes = ["Shootemups", "Weird", "Super Mario"]
+import { useThemeStore } from './store'
 
 const ThemeDropdown = () => {
-  const [selectedTheme, setSelectedTheme] = useState('')
+  const themes = useThemeStore((state) => state.themes)
+  const fetchThemes = useThemeStore((state) => state.fetchThemes)
+  const setSelectedTheme = useThemeStore((state) => state.setSelectedTheme)
+
+  useEffect(() => {
+    fetchThemes()
+  }, [fetchThemes])
+
+  const [localSelectedTheme, setLocalSelectedTheme] = useState('')
 
   const handleChange = (event) => {
-    setSelectedTheme(event.target.value)
+    const theme = event.target.value
+    setLocalSelectedTheme(theme)
+    setSelectedTheme(theme)
   }
 
   return (
-    <div class="theme-dropdown">
-        <select id="theme-dropdown" value={selectedTheme} onChange={handleChange}>
-            <option value="" disabled>Wähle ein Thema</option>
-            {themes.map((theme, index) => (
-            <option key={index} value={theme}>
-                {theme}
-            </option>
-            ))}
-        </select>
-        {selectedTheme && <h2>{selectedTheme}</h2>}
+    <div className="theme-dropdown">
+      <select id="theme-dropdown" value={localSelectedTheme} onChange={handleChange}>
+        <option value="" disabled>Wähle ein Thema</option>
+        {themes.map((theme, index) => (
+          <option key={index} value={theme.name}>
+            {theme.name}
+          </option>
+        ))}
+      </select>
+      {localSelectedTheme && <h2>{localSelectedTheme}</h2>}
     </div>
   )
 }
