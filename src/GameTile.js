@@ -43,21 +43,21 @@ const GamingTile = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Lena</td>
-                    <td>{game.ratings ? game.ratings.Lena : '?'}</td>
-                    <td>{game.ratings ? game.ratings.Lena : '?'}</td>
-                  </tr>
-                  <tr>
-                    <td>Rene</td>
-                    <td>{game.ratings ? game.ratings.Rene : '?'}</td>
-                    <td>{game.ratings ? game.ratings.Rene : '?'}</td>
-                  </tr>
-                  <tr>
-                    <td>Chris</td>
-                    <td>{game.ratings ? game.ratings.Chris : '?'}</td>
-                    <td>{game.ratings ? game.ratings.Chris : '?'}</td>
-                  </tr>
+                <tr>
+                  <td>Lena</td>
+                  <td>{game.ratings && game.ratings.Lena ? game.ratings.Lena.total : '?'}</td>
+                  <td>{game.ratings && game.ratings.Lena ? game.ratings.Lena.theme : '?'}</td>
+                </tr>
+                <tr>
+                  <td>Rene</td>
+                  <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.total : '?'}</td>
+                  <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.theme : '?'}</td>
+                </tr>
+                <tr>
+                  <td>Chris</td>
+                  <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.total : '?'}</td>
+                  <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.theme : '?'}</td>
+                </tr>
                 </tbody>
               </table>
             </div>

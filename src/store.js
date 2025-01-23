@@ -3,6 +3,9 @@ import { create } from 'zustand'
 export const useThemeStore = create((set, get) => ({
   themes: [],
   selectedTheme: '',
+  selectedThemeGames: [],
+  key: '',
+  name: '',
   fetchThemes: async () => {
     const response = await fetch('https://retroclub.vercel.app/api/getThemes')
     const data = await response.json()
@@ -14,5 +17,6 @@ export const useThemeStore = create((set, get) => ({
     set({ selectedTheme: theme, selectedThemeGames: selectedThemeData ? selectedThemeData.games : [] })
     console.log(selectedThemeData.games)
   },
-  selectedThemeGames: []
+  setKey: (key) => set({ key }),
+  setName: (name) => set({ name }),
 }))

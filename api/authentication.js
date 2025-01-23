@@ -1,13 +1,13 @@
 export default function handler(req, res) {
     if (req.method !== 'POST') {
-      res.status(405).json({ error: 'Method Not Allowed' })
+      res.status(405).json({ error: 'Was machst du?!' })
       return
     }
   
     const { password } = req.body
   
     if (!password) {
-      res.status(400).json({ error: 'Password is required' })
+      res.status(400).json({ error: 'Password wird benötigt' })
       return
     }
   
@@ -19,12 +19,12 @@ export default function handler(req, res) {
     const keyChris = process.env.KEY_CHRIS
   
     if (password === passwordLena) {
-      res.status(200).json({ key: keyLena })
+      res.status(200).json({ key: keyLena, name: 'Lena' })
     } else if (password === passwordRene) {
-        res.status(200).json({ key: keyRene })
+        res.status(200).json({ key: keyRene, name: 'René' })
     } else if (password === passwordChris) {
-      res.status(200).json({ key: keyChris })
+      res.status(200).json({ key: keyChris, name: 'Chris' })
     } else {
-      res.status(401).json({ error: 'Unauthorized' })
+      res.status(401).json({ error: 'Nicht authorisiert' })
     }
   }

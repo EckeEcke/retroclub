@@ -1,9 +1,12 @@
 import './Header.css'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useThemeStore } from './store'
 
   function Header() {
     const [isOpen, setIsOpen] = useState(false)
+    const setKey = useThemeStore((state) => state.setKey)
+    const setName = useThemeStore((state) => state.setName)
   
     const openModal = () => {
       setIsOpen(true)
@@ -25,7 +28,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
     })
     const data = await response.json()
     if (response.ok) {
-      setMessage(`Key: ${data.key}`)
+      setMessage(`Moin ${data.name}! Dein Key ist ${data.key}`)
+      setKey(data.key)
+      setName(data.name)
     } else {
       setMessage(`Error: ${data.error}`)
     }
