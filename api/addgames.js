@@ -1,6 +1,32 @@
 import { connectToDatabase } from './dbClient'
+import Cors from 'cors'
+
+// Initialize the CORS middleware
+const cors = Cors({
+  methods: ['POST', 'OPTIONS'],
+  origin: ['http://localhost:3000', 'https://your-production-site.com']
+})
+
+// Helper function to run the middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+      return resolve(result)
+    })
+  })
+}
 
 export default async function handler(req, res) {
+  await runMiddleware(req, res, cors)
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end()
+    return
+  }
+
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method Not Allowed' })
     return

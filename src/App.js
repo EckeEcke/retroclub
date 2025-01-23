@@ -18,10 +18,8 @@ function App() {
       const response = await fetch('/api/addgames', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ theme: 'Super Mario', ids: ['3030-7406','3030-7638','3030-19726','3030-10299','3025-1897','3030-19834','3030-14425', ] })
+        body: JSON.stringify({ theme: 'Super Mario', ids: ['3030-311','3030-19726','3030-15544','3030-7406','3030-10299','3030-25744','3030-1334','3030-7638','3030-19834','3030-14425'] })
       })
-      const data = await response.json()
-      console.log(data)
     }
 
     fetchData()
