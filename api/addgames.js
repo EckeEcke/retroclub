@@ -6,7 +6,12 @@ export default async function handler(req, res) {
     return
   }
 
-  const { theme, ids } = req.body
+  const { theme, ids, key } = req.body
+
+  if (key !== process.env.KEY_CHRIS) {
+    res.status(401).json({ error: 'Unauthorized' })
+    return
+  }
 
   if (!Array.isArray(ids) || !theme) {
     res.status(400).json({ error: 'A theme name should be added and Ids should be an array' })
