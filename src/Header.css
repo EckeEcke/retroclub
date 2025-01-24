@@ -96,6 +96,12 @@ h1 {
     padding: 1rem;
   }
 
+  header .modal input {
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 3rem;
+  }
+
   .modal input:focus,
   .modal input:focus-visible {
     border-color: #68019f;
