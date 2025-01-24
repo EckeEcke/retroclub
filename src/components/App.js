@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Header from './Header.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'

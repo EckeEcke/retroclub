@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import './ThemeDropdown.css'
-import { useThemeStore } from './store'
+import '../css/ThemeDropdown.css'
+import { useThemeStore } from '../store/store'
 
 const ThemeDropdown = () => {
   const themes = useThemeStore((state) => state.themes)

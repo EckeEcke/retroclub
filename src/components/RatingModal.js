@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './RatingModal.css'
-import { useThemeStore } from './store'
+import '../css/RatingModal.css'
+import { useThemeStore } from '../store/store'
 
 const RatingModal = ({ game, isOpen, onClose }) => {
   const selectedTheme = useThemeStore((state) => state.selectedTheme)

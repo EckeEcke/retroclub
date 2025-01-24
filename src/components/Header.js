@@ -1,7 +1,7 @@
-import './Header.css'
+import '../css/Header.css'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useThemeStore } from './store'
+import { useThemeStore } from '../store/store'
 
   function Header() {
     const [isOpen, setIsOpen] = useState(false)

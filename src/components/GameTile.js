@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './GameTile.css'
-import { useThemeStore } from './store'
+import '../css/GameTile.css'
+import { useThemeStore } from '../store/store'
 import RatingModal from './RatingModal'
 
 const GamingTile = () => {
