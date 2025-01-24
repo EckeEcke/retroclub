@@ -29,6 +29,14 @@ h1 {
     transform: scale(1.1);
 }
 
+.container-header button.authenticated {
+  background: limegreen;
+}
+
+button.authenticated svg {
+  color: white;
+}
+
 .container-header {
     display: flex;
     justify-content: space-between;

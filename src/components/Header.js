@@ -7,6 +7,7 @@ import { useThemeStore } from '../store/store'
     const [isOpen, setIsOpen] = useState(false)
     const setKey = useThemeStore((state) => state.setKey)
     const setName = useThemeStore((state) => state.setName)
+    const key = useThemeStore((state) => state.key)
   
     const openModal = () => {
       setIsOpen(true)
@@ -44,7 +45,7 @@ import { useThemeStore } from '../store/store'
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
           <h1>Retroclub</h1>
         </div>
-        <button onClick={openModal}>
+        <button onClick={openModal} className={key.length > 0 ? 'authenticated' : ''}>
           <FontAwesomeIcon icon="fa-solid fa-user" />
         </button>
       </div>
