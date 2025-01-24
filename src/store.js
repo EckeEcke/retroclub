@@ -18,20 +18,4 @@ export const useThemeStore = create((set, get) => ({
   },
   setKey: (key) => set({ key }),
   setName: (name) => set({ name }),
-updateGameRating: (gameId, rating) => {
-    set(state => {
-        const themeIndex = state.themes.findIndex(theme => theme.name === state.selectedTheme)
-        const updatedThemes = [ ...state.themes ]
-        const updatedGames = [updatedThemes[themeIndex].games]
-        const gameIndex = updatedGames.findIndex(game => game.id === gameId)
-        const game = { ...updatedGames[gameIndex] }
-        if (!game.ratings) {
-            game.ratings = {}
-        }
-        game.ratings[state.name] = rating
-        updatedGames[gameIndex] = game
-        updatedThemes[themeIndex] = { ...updatedThemes[themeIndex], games: updatedGames }
-        return ({ themes: updatedThemes })
-    })
-}
 }))

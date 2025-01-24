@@ -7,7 +7,7 @@ const RatingModal = ({ game, isOpen, onClose }) => {
   const [gesamt, setGesamt] = useState(0)
   const [thema, setThema] = useState(0)
   const key = useThemeStore((state) => state.key)
-  const updateGameRating = useThemeStore((state) => state.updateGameRating)
+  const fetchThemes = useThemeStore((state) => state.fetchThemes)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -30,7 +30,8 @@ const RatingModal = ({ game, isOpen, onClose }) => {
 
     if (response.ok) {
       console.log('Rating added successfully')
-      updateGameRating(selectedTheme, game.id, rating)
+      fetchThemes()
+
     } else {
       console.error('Failed to add rating')
     }
