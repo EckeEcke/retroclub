@@ -21,6 +21,9 @@ const ThemeDropdown = () => {
 
   return (
     <div className="theme-dropdown">
+      {themes.length === 0 ? (
+        <div class="loader"></div>
+      ) : (
       <select id="theme-dropdown" value={localSelectedTheme} onChange={handleChange}>
         <option value="" disabled>Wähle ein Thema</option>
         {themes.map((theme, index) => (
@@ -28,7 +31,7 @@ const ThemeDropdown = () => {
             {theme.name}
           </option>
         ))}
-      </select>
+      </select>)}
       {localSelectedTheme && <h2>{localSelectedTheme}</h2>}
     </div>
   )
