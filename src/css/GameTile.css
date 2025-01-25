@@ -97,6 +97,31 @@ th {
     color: white;
 }
 
+.platforms {
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+.platforms.expanded {
+    max-height: none;
+}
+
+.toggle-button {
+    display: block;
+    margin-top: 0.5em;
+    cursor: pointer;
+    border: none;
+    text-decoration: underline;
+    text-align: left;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    background: transparent;
+    padding: 0;
+}
+
 
 
 .tile-container {
