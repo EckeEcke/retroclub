@@ -15,4 +15,5 @@
 select {
     width: 200px;
     padding: 0.5rem;
+    border-radius:0.5rem;
 }
