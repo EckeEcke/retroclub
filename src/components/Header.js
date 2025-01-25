@@ -1,5 +1,6 @@
 import '../css/Header.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useThemeStore } from '../store/store'
 
@@ -10,6 +11,13 @@ import { useThemeStore } from '../store/store'
     const isLoggedIn = useThemeStore((state) => state.isLoggedIn)
     const logout = useThemeStore((state) => state.logout)
     const name = useThemeStore((state) => state.name)
+
+    const navigate = useNavigate()
+
+  const handleEditButtonClick = () => {
+    navigate('/edit')
+    closeModal()
+  }
   
     const openModal = () => {
       setIsOpen(true)
@@ -66,6 +74,7 @@ import { useThemeStore } from '../store/store'
             {isLoggedIn() ? (
               <div>
                 <h2>Moin {name}!</h2>
+                <button class="edit-button" onClick={handleEditButtonClick}>Bewertungen bearbeiten</button>
                 <button class="logout-button" onClick={handleLogout}>Abmelden</button>
               </div>
             ) : (

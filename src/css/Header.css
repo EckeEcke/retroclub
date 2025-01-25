@@ -124,7 +124,7 @@ button.authenticated svg {
     gap: 1rem;
   }
 
-  form button, .logout-button {
+  form button, .logout-button, header .edit-button {
     background: #68019f;
     padding: 0.5rem;
     color: white;
@@ -134,8 +134,12 @@ button.authenticated svg {
     font-size: 1.5rem;
   }
 
-  form button:hover, .logout-button:hover {
+  form button:hover, .logout-button:hover, header .edit-button:hover {
     transform: scale(1.05);
     background: darkmagenta;
     border: none;
+  }
+
+  header .edit-button {
+    margin-bottom: 1rem;
   }

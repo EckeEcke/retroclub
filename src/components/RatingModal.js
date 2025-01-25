@@ -4,8 +4,8 @@ import { useThemeStore } from '../store/store'
 
 const RatingModal = ({ game, isOpen, onClose }) => {
   const selectedTheme = useThemeStore((state) => state.selectedTheme)
-  const [gesamt, setGesamt] = useState(null)
-  const [thema, setThema] = useState(null)
+  const [gesamt, setGesamt] = useState('')
+  const [thema, setThema] = useState('')
   const key = useThemeStore((state) => state.key)
   const fetchThemes = useThemeStore((state) => state.fetchThemes)
 

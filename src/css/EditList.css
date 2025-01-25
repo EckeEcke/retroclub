@@ -1,0 +1,26 @@
+.edit-table table {
+    width: auto;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    color: #68019f;
+}
+
+.back-button {
+    background: #68019f;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    color: white;
+    border-radius: 0.25rem;
+    border: none;
+    width: auto;
+    font-size: 1rem;
+}
+    
+.back-button:hover {
+    transform: scale(1.05);
+    background: darkmagenta;
+    border: none;
+}
