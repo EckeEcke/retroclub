@@ -68,10 +68,10 @@
   .input-wrapper {
     display: flex;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
   
   .modal button[type="submit"] {
-    margin-top: 20px;
     padding: 10px 20px;
     background-color: #68019f;
     color: white;
