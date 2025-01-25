@@ -19,6 +19,8 @@ function runMiddleware(req, res, fn) {
   })
 }
 
+const validKeys = [process.env.KEY_CHRIS, process.env.KEY_LENA, process.env.KEY_RENE]
+
 export default async function handler(req, res) {
   await runMiddleware(req, res, cors)
 
@@ -34,7 +36,7 @@ export default async function handler(req, res) {
 
   const { theme, ids, key } = req.body
 
-  if (key !== process.env.KEY_CHRIS) {
+  if (!validKeys.includes(key)) {
     res.status(401).json({ error: 'Unauthorized' })
     return
   }
