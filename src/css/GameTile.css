@@ -123,13 +123,6 @@ th {
     padding: 0;
 }
 
-.table-wrapper {
-    background: #68019f;
-    padding: 0 6px 6px;
-    border-radius: 0.5rem;
-
-}
-
 .tile-container {
     grid-template-columns: 1fr;
 }
