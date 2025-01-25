@@ -11,12 +11,20 @@ const GameTile = ({ game }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [showToggle, setShowToggle] = useState(false)
 
-  useEffect(() => {
+  const checkOverflow = () => {
     const element = platformListRef.current
     if (element && element.scrollHeight > element.clientHeight) {
       setShowToggle(true)
     } else {
       setShowToggle(false)
+    }
+  }
+
+  useEffect(() => {
+    checkOverflow()
+    window.addEventListener('resize', checkOverflow)
+    return () => {
+      window.removeEventListener('resize', checkOverflow)
     }
   }, [])
 
