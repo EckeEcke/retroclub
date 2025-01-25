@@ -21,6 +21,7 @@ import { useThemeStore } from '../store/store'
 
     const handleLogout = () => {
       logout()
+      setMessage('')
       closeModal()
     }
 

@@ -92,7 +92,7 @@ const GameTile = ({ game }) => {
                     <td>{game.ratings && game.ratings.Lena ? game.ratings.Lena.theme : '?'}</td>
                   </tr>
                   <tr>
-                    <td>Rene</td>
+                    <td>René</td>
                     <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.total : '?'}</td>
                     <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.theme : '?'}</td>
                   </tr>
