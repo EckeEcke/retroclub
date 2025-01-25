@@ -4,8 +4,8 @@ import { useThemeStore } from '../store/store'
 
 const RatingModal = ({ game, isOpen, onClose }) => {
   const selectedTheme = useThemeStore((state) => state.selectedTheme)
-  const [gesamt, setGesamt] = useState(0)
-  const [thema, setThema] = useState(0)
+  const [gesamt, setGesamt] = useState(null)
+  const [thema, setThema] = useState(null)
   const key = useThemeStore((state) => state.key)
   const fetchThemes = useThemeStore((state) => state.fetchThemes)
 
@@ -51,23 +51,25 @@ const RatingModal = ({ game, isOpen, onClose }) => {
                 <label>
                     Gesamt:
                     <input
-                    type="number"
-                    value={gesamt}
-                    onChange={(e) => setGesamt(e.target.value)}
-                    min="0"
-                    max="10"
-                    required
+                      type="number"
+                      value={gesamt}
+                      onChange={(e) => setGesamt(e.target.value)}
+                      min="0"
+                      max="10"
+                      required
+                      placeholder="0-10"
                     />
                 </label>
                 <label>
                     Thema:
                     <input
-                    type="number"
-                    value={thema}
-                    onChange={(e) => setThema(e.target.value)}
-                    min="0"
-                    max="10"
-                    required
+                      type="number"
+                      value={thema}
+                      onChange={(e) => setThema(e.target.value)}
+                      min="0"
+                      max="10"
+                      required
+                      placeholder="0-10"
                     />
                 </label>
             </div>
