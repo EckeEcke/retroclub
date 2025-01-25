@@ -11,7 +11,7 @@ const GameTileContainer = () => {
       {games.length > 0 ? (
         games.map((game, index) => (
           <GameTile 
-            key={index} 
+            key={index + game.id} 
             game={game}
           />
         ))
