@@ -57,7 +57,7 @@ const RatingModal = ({ game, isOpen, onClose }) => {
                       min="0"
                       max="10"
                       required
-                      placeholder="0-10"
+                      placeholder="0"
                     />
                 </label>
                 <label>
@@ -69,7 +69,7 @@ const RatingModal = ({ game, isOpen, onClose }) => {
                       min="0"
                       max="10"
                       required
-                      placeholder="0-10"
+                      placeholder="0"
                     />
                 </label>
             </div>
