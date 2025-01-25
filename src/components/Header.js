@@ -18,6 +18,10 @@ import { useThemeStore } from '../store/store'
     navigate('/edit')
     closeModal()
   }
+
+  const handleLogoClick = () => {
+    navigate('/')
+  }
   
     const openModal = () => {
       setIsOpen(true)
@@ -59,7 +63,7 @@ import { useThemeStore } from '../store/store'
   return (
     <header>
       <div class="container container-header">
-        <div class="logo-wrapper">
+        <div class="logo-wrapper" onClick={handleLogoClick}>
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
           <h1>Retroclub</h1>
         </div>
