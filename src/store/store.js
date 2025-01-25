@@ -4,8 +4,8 @@ export const useThemeStore = create((set, get) => ({
   themes: [],
   selectedTheme: '',
   selectedThemeGames: [],
-  key: '',
-  name: '',
+  key: localStorage.getItem('retroclub-key') || '',
+  name: localStorage.getItem('retroclub-name') || '',
   fetchThemes: async () => {
     const response = await fetch('https://retroclub.vercel.app/api/getThemes')
     const data = await response.json()

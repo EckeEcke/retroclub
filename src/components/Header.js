@@ -32,6 +32,8 @@ import { useThemeStore } from '../store/store'
       setMessage(`Moin ${data.name}!`)
       setKey(data.key)
       setName(data.name)
+      localStorage.setItem('retroclub-key', data.key)
+      localStorage.setItem('retroclub-name', data.name)
       setTimeout(() => closeModal(), 1000)
     } else {
       setMessage(`Fehler: ${data.error}`)
