@@ -123,8 +123,9 @@ button.authenticated svg {
     gap: 1rem;
   }
 
-  form button {
+  form button, .logout-button {
     background: #68019f;
+    padding: 0.5rem;
     color: white;
     border-radius: 0.25rem;
     border: none;
@@ -132,7 +133,7 @@ button.authenticated svg {
     font-size: 1.5rem;
   }
 
-  form button:hover {
+  form button:hover, .logout-button:hover {
     transform: scale(1.05);
     background: darkmagenta;
     border: none;

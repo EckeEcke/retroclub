@@ -26,4 +26,13 @@ export const useThemeStore = create((set, get) => ({
   },
   setKey: (key) => set({ key }),
   setName: (name) => set({ name }),
+  isLoggedIn: () => {
+    const state = get()
+    return state.key.length > 0 && state.name.length > 0
+  },
+  logout: () => {
+    localStorage.removeItem('retroclub-key')
+    localStorage.removeItem('retroclub-name')
+    set({ key: '', name: '' })
+  }
 }))

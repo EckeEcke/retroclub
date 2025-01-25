@@ -7,7 +7,9 @@ import { useThemeStore } from '../store/store'
     const [isOpen, setIsOpen] = useState(false)
     const setKey = useThemeStore((state) => state.setKey)
     const setName = useThemeStore((state) => state.setName)
-    const key = useThemeStore((state) => state.key)
+    const isLoggedIn = useThemeStore((state) => state.isLoggedIn)
+    const logout = useThemeStore((state) => state.logout)
+    const name = useThemeStore((state) => state.name)
   
     const openModal = () => {
       setIsOpen(true)
@@ -15,6 +17,11 @@ import { useThemeStore } from '../store/store'
   
     const closeModal = () => {
       setIsOpen(false)
+    }
+
+    const handleLogout = () => {
+      logout()
+      closeModal()
     }
 
     const [password, setPassword] = useState('')
@@ -47,7 +54,7 @@ import { useThemeStore } from '../store/store'
           <FontAwesomeIcon icon="fa-solid fa-gamepad" />
           <h1>Retroclub</h1>
         </div>
-        <button onClick={openModal} className={key.length > 0 ? 'authenticated' : ''}>
+        <button onClick={openModal} className={isLoggedIn() ? 'authenticated' : ''}>
           <FontAwesomeIcon icon="fa-solid fa-user" />
         </button>
       </div>
@@ -55,20 +62,28 @@ import { useThemeStore } from '../store/store'
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            <h2>Anmelden</h2>
-            <form onSubmit={handleSubmit}>
-              <input 
-                placeholder="Passwort eingeben" 
-                type="password" 
-                id="password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                required
-              />
-              <button type="submit">Senden</button>
-              {message && <p>{message}</p>}
-            </form>
-            
+            {isLoggedIn() ? (
+              <div>
+                <h2>Moin {name}!</h2>
+                <button class="logout-button" onClick={handleLogout}>Abmelden</button>
+              </div>
+            ) : (
+              <div>
+                <h2>Anmelden</h2>
+                <form onSubmit={handleSubmit}>
+                  <input 
+                    placeholder="Passwort eingeben" 
+                    type="password" 
+                    id="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required
+                  />
+                  <button type="submit">Senden</button>
+                  {message && <p>{message}</p>}
+                </form>
+              </div>
+            )}
           </div>
         </div>
       )}
