@@ -14,3 +14,7 @@ th {
     background-color: #68019f;
     color: white;
 }
+
+tr:nth-child(odd) {
+    background-color: lavenderblush;
+}
