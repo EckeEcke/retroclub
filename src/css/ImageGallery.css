@@ -39,8 +39,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
     border: none;
+    border-radius: 0.25rem;
     color: white;
     font-size: 2rem;
     cursor: pointer;
