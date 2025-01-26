@@ -1,4 +1,4 @@
-.admin-page form, h2 {
+.admin-page form, .admin-page h2 {
     max-width: 300px;
     text-align: center;
 }

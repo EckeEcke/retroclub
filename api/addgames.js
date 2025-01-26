@@ -4,7 +4,7 @@ import Cors from 'cors'
 // Initialize the CORS middleware
 const cors = Cors({
   methods: ['POST', 'OPTIONS'],
-  origin: ['http://localhost:3000', 'https://your-production-site.com']
+  origin: ['http://localhost:3000', 'https://retroclub.vercel.app']
 })
 
 // Helper function to run the middleware
