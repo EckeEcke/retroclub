@@ -45,6 +45,7 @@
     color: white;
     font-size: 2rem;
     cursor: pointer;
+    padding: 0.1rem;
   }
   
   .prev-button {
@@ -53,5 +54,21 @@
   
   .next-button {
     right: 30%;
+  }
+
+  .image-index {
+    position: absolute;
+    bottom: 10%;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 0.25rem;
+    font-size: 1.5rem;
+  }
+
+  .no-images {
+    color: white;
+    font-size: 3rem;
   }
   

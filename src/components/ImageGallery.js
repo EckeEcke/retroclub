@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import '../css/ImageGallery.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect, useRef, useCallback } from 'react'
+import '../css/ImageGallery.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ImageGallery = ({ images, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -47,25 +47,33 @@ const ImageGallery = ({ images, onClose }) => {
   }, [nextImage, prevImage])
 
   const handleError = () => {
+    images.splice(currentIndex, 1)
     nextImage()
   }
 
   return (
     <div className="image-gallery">
-        <button className="close-button" onClick={onClose}>
-            <FontAwesomeIcon icon="fa-solid fa-close" />    
-        </button>
+      <button className="close-button" onClick={onClose}>
+        <FontAwesomeIcon icon="fa-solid fa-close" />    
+      </button>
       <div className="image-container">
-        <img src={images[currentIndex]?.original} alt='' onError={handleError} />
+        {images.length > 0 ? (
+          <>
+            <img src={images[currentIndex]?.original} alt='' onError={handleError} />
+            <button className="prev-button" onClick={prevImage}>
+              <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
+            </button>
+            <button className="next-button" onClick={nextImage}>
+              <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+            </button>
+            <div className="image-index">{currentIndex + 1} / {images.length}</div>
+          </>
+        ) : (
+          <p class="no-images">Keine Bilder verfügbar 😒</p>
+        )}
       </div>
-      <button className="prev-button" onClick={prevImage}>
-        <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
-      </button>
-      <button className="next-button" onClick={nextImage}>
-        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
-      </button>
     </div>
   )
 }
 
-export default ImageGallery;
+export default ImageGallery
