@@ -21,9 +21,9 @@ function AdminPage() {
             body: JSON.stringify({ theme, ids: gameIdsArray, key })
         })
         if (response.ok) {
-            console.log('Games added successfully')
+            alert('Thema und Games erfolgreich hinzugefügt')
         } else {
-            console.error('Failed to add games')
+            alert('Hinzufügen fehlgeschlagen')
         }
     }
 
@@ -37,14 +37,14 @@ function AdminPage() {
             body: JSON.stringify({ theme: deleteTheme, key })
         })
         if (response.ok) {
-            console.log('Theme deleted successfully')
+            alert('Thema erfolgreich gelöscht')
         } else {
-            console.error('Failed to delete theme')
+            alert('Löschen fehlgeschlagen')
         }
     }
 
     if (!key || !name) {
-        return <p>Access Denied</p>
+        return <p>Zugriff verweigert!</p>
     }
 
     return (
