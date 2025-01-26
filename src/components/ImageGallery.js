@@ -3,7 +3,6 @@ import '../css/ImageGallery.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ImageGallery = ({ images, onClose }) => {
-    const [availableImages, setAvailableImages] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
@@ -47,29 +46,6 @@ const ImageGallery = ({ images, onClose }) => {
     }
   }, [nextImage, prevImage])
 
-  useEffect(() => {
-    const checkImageAvailability = async (imageUrl) => {
-      try {
-        const response = await fetch(imageUrl, { method: 'HEAD' })
-        return response.ok
-      } catch (error) {
-        return false
-      }
-    }
-
-    const filterAvailableImages = async () => {
-      const validImages = await Promise.all(
-        images.map(async (image) => {
-          const isAvailable = await checkImageAvailability(image.original)
-          return isAvailable ? image : null
-        })
-      )
-      setAvailableImages(validImages.filter(Boolean))
-    }
-
-    filterAvailableImages()
-  }, [images])
-
   const handleError = () => {
     nextImage()
   }
@@ -80,7 +56,7 @@ const ImageGallery = ({ images, onClose }) => {
             <FontAwesomeIcon icon="fa-solid fa-close" />    
         </button>
       <div className="image-container">
-        <img src={availableImages[currentIndex]?.original} alt='' onError={handleError} />
+        <img src={images[currentIndex]?.original} alt='' onError={handleError} />
       </div>
       <button className="prev-button" onClick={prevImage}>
         <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
