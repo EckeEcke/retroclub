@@ -3,6 +3,7 @@ import { useThemeStore } from '../store/store'
 import RatingModal from './RatingModal'
 import RatingsTable from './RatingsTable'
 import '../css/GameTile.css'
+import ImageGallery from './ImageGallery'
 
 const GameTile = ({ game }) => {
   const [modalGame, setModalGame] = useState(null)
@@ -49,12 +50,23 @@ const GameTile = ({ game }) => {
     return publishers.slice(0, 2).map((publisher) => publisher.name).join(', ')
   }
 
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+
+  const openGallery = (images) => {
+    setIsGalleryOpen(true)
+  }
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false)
+  }
+
   return (
     <div className="game-card">
+      {isGalleryOpen && <ImageGallery images={game.images} onClose={closeGallery} />}
       {game ? (
         <>
           <div className="image-container">
-            <img src={game.image?.original_url} alt={game.name} />
+            <img src={game.image?.original_url} alt={game.name} onClick={openGallery} />
           </div>
           <h2 className="game-tile-headline" onClick={() => openInNewTab(game.site_detail_url)}>{game.name}</h2>
           <div className="release-year">
