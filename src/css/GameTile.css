@@ -80,7 +80,7 @@
 }
 
 .platforms {
-    max-height: 4.5rem;
+    max-height: 4.3rem;
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
