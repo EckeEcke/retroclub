@@ -1,0 +1,16 @@
+.admin-page form, h2 {
+    max-width: 300px;
+    text-align: center;
+}
+
+.admin-page form label {
+    display: block;
+}
+
+.admin-page form input {
+    padding: 0.25rem;
+}
+
+.admin-page button {
+    margin-top: 1rem;
+}
