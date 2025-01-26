@@ -24,8 +24,12 @@ const ImageGallery = ({ images, onClose }) => {
       <div className="image-container">
         <img src={images[currentIndex]?.original} alt='' />
       </div>
-      <button className="prev-button" onClick={prevImage}><FontAwesomeIcon icon="fa-solid fa-arrow-left" /> </button>
-      <button className="next-button" onClick={nextImage}><FontAwesomeIcon icon="fa-solid fa-arrow-right" /> </button>
+      <button className="prev-button" onClick={prevImage}>
+        <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
+      </button>
+      <button className="next-button" onClick={nextImage}>
+        <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+      </button>
     </div>
   )
 }
