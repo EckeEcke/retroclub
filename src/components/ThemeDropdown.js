@@ -3,15 +3,16 @@ import '../css/ThemeDropdown.css'
 import { useThemeStore } from '../store/store'
 
 const ThemeDropdown = () => {
-  const themes = useThemeStore((state) => state.themes)
-  const fetchThemes = useThemeStore((state) => state.fetchThemes)
-  const setSelectedTheme = useThemeStore((state) => state.setSelectedTheme)
+  const themes = useThemeStore(state => state.themes)
+  const fetchThemes = useThemeStore(state => state.fetchThemes)
+  const setSelectedTheme = useThemeStore(state => state.setSelectedTheme)
+  const selectedTheme = useThemeStore(state => state.selectedTheme)
 
   useEffect(() => {
     fetchThemes()
   }, [fetchThemes])
 
-  const [localSelectedTheme, setLocalSelectedTheme] = useState('')
+  const [localSelectedTheme, setLocalSelectedTheme] = useState(selectedTheme || '')
 
   const handleChange = (event) => {
     const theme = event.target.value

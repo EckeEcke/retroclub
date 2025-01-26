@@ -9,7 +9,11 @@ export const useThemeStore = create((set, get) => ({
   fetchThemes: async () => {
     const response = await fetch('https://retroclub.vercel.app/api/getThemes')
     const data = await response.json()
-    const allGames = data.map(theme => theme.games).flat()
+    const allGames = data.map(theme => theme.games).flat().sort((a, b) => {
+      if (a.name < b.name) return -1
+      if (a.name > b.name) return 1
+      return 0
+    })
     set({ themes: [ ...data, { name: 'Alle Games', games: allGames }] })
     const selectedTheme = get().selectedTheme
     if (selectedTheme.length > 0) {
