@@ -16,13 +16,17 @@ const ImageGallery = ({ images, onClose }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
   }
 
+  const handleError = () => {
+    nextImage()
+  }
+
   return (
     <div className="image-gallery">
         <button className="close-button" onClick={onClose}>
             <FontAwesomeIcon icon="fa-solid fa-close" />    
         </button>
       <div className="image-container">
-        <img src={images[currentIndex]?.original} alt='' />
+        <img src={images[currentIndex]?.original} alt='' onError={handleError} />
       </div>
       <button className="prev-button" onClick={prevImage}>
         <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
