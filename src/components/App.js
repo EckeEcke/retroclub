@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import IndexPage from '../pages/index.js'
 import EditPage from '../pages/edit.js'
 import AdminPage from '../pages/admin.js'
+import NotFoundPage from '../pages/404.js'
 
 library.add(fas)
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<IndexPage />} />
           <Route path="/edit" element={<EditPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="*" element={<NotFoundPage/ >} />
         </Routes>
       </div>
     </Router>
