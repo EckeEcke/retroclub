@@ -37,13 +37,26 @@ export default async function handler(req, res) {
     // to be removed
     await collection.updateMany(
       {},
-      { $rename: {
-          'games.$[].ratings.Christian.total': 'games.$[].ratings.Christian.gameplay', 
-          'games.$[].ratings.Christian.theme': 'games.$[].ratings.Christian.aging',
-          'games.$[].ratings.Rene.total': 'games.$[].ratings.Rene.gameplay', 
-          'games.$[].ratings.Rene.theme': 'games.$[].ratings.Rene.aging',
-          'games.$[].ratings.Lena.total': 'games.$[].ratings.Lena.gameplay', 
-          'games.$[].ratings.Lena.theme': 'games.$[].ratings.Lena.aging'
+      { $set: {
+          'games.ratings.Christian.gameplay': '$games.ratings.Christian.total', 
+          'games.ratings.Christian.aging': '$games.ratings.Christian.theme',
+          'games.ratings.Rene.gameplay': '$games.ratings.Rene.total', 
+          'games.ratings.Rene.aging': '$games.ratings.Rene.theme',
+          'games.ratings.Lena.gameplay': '$games.ratings.Lena.total', 
+          'games.ratings.Lena.aging': '$games.ratings.Lena.theme'
+        }
+      }
+    )
+
+    await collection.updateMany(
+      {},
+      { $unset: {
+          'games.ratings.Christian.total': '', 
+          'games.ratings.Christian.theme': '',
+          'games.ratings.Rene.total': '', 
+          'games.ratings.Rene.theme': '',
+          'games.ratings.Lena.total': '', 
+          'games.ratings.Lena.theme': ''
         }
       }
     )
@@ -52,12 +65,12 @@ export default async function handler(req, res) {
     await collection.updateMany(
       {},
       { $set: {
-          'games.$[].ratings.Christian.graphics': 'defaultValue', 
-          'games.$[].ratings.Christian.trashiness': 'defaultValue',
-          'games.$[].ratings.Rene.graphics': 'defaultValue', 
-          'games.$[].ratings.Rene.trashiness': 'defaultValue',
-          'games.$[].ratings.Lena.graphics': 'defaultValue', 
-          'games.$[].ratings.Lena.trashiness': 'defaultValue'
+          'games.ratings.Christian.graphics': 'defaultValue', 
+          'games.ratings.Christian.trashiness': 'defaultValue',
+          'games.ratings.Rene.graphics': 'defaultValue', 
+          'games.ratings.Rene.trashiness': 'defaultValue',
+          'games.ratings.Lena.graphics': 'defaultValue', 
+          'games.ratings.Lena.trashiness': 'defaultValue'
         }
       }
     )
