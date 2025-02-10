@@ -24,15 +24,15 @@ const RatingsTable = ({ game }) => {
           </tr>
           <tr>
             <td>René</td>
-            <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.total : '?'}</td>
-            <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.theme : '?'}</td>
+            <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.gameplay : '?'}</td>
+            <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.aging : '?'}</td>
             <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.graphics : '?'}</td>
             <td>{game.ratings && game.ratings.Rene ? game.ratings.Rene.trashiness : '?'}</td>
           </tr>
           <tr>
             <td>Chris</td>
-            <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.total : '?'}</td>
-            <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.theme : '?'}</td>
+            <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.gameplay : '?'}</td>
+            <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.aging : '?'}</td>
             <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.graphics : '?'}</td>
             <td>{game.ratings && game.ratings.Chris ? game.ratings.Chris.trashiness : '?'}</td>
           </tr>
