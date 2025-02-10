@@ -6,6 +6,7 @@ export const useThemeStore = create((set, get) => ({
   selectedThemeGames: [],
   key: localStorage.getItem('retroclub-key') || '',
   name: localStorage.getItem('retroclub-name') || '',
+  hideRatings: false,
   fetchThemes: async () => {
     const response = await fetch('https://retroclub.vercel.app/api/getThemes')
     const data = await response.json()
@@ -30,6 +31,7 @@ export const useThemeStore = create((set, get) => ({
   },
   setKey: (key) => set({ key }),
   setName: (name) => set({ name }),
+  setHideRatings: (hideRatings) => set({ hideRatings }),
   isLoggedIn: () => {
     const state = get()
     return state.key.length > 0 && state.name.length > 0

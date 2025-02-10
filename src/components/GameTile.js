@@ -11,6 +11,9 @@ const GameTile = ({ game }) => {
   const platformListRef = useRef(null)
   const [isExpanded, setIsExpanded] = useState(false)
   const [showToggle, setShowToggle] = useState(false)
+  const hideRatings = useThemeStore((state) => state.hideRatings)
+  const shouldShowRatingsTable = !name || !hideRatings
+
 
   const checkOverflow = () => {
     const element = platformListRef.current
@@ -88,7 +91,7 @@ const GameTile = ({ game }) => {
               <button className="rating-button" onClick={openModal}>Bewerten</button>
             )}
             <h3>Bewertungen</h3>
-            <RatingsTable game={game} />
+            {shouldShowRatingsTable && <RatingsTable game={game} />}
           </div>
           {modalGame && (
             <RatingModal

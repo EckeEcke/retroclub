@@ -11,6 +11,8 @@ import { useThemeStore } from '../store/store'
     const isLoggedIn = useThemeStore((state) => state.isLoggedIn)
     const logout = useThemeStore((state) => state.logout)
     const name = useThemeStore((state) => state.name)
+    const setHideRatings = useThemeStore(state => state.setHideRatings)
+    const hideRatings = useThemeStore(state => state.hideRatings)
 
     const navigate = useNavigate()
 
@@ -60,6 +62,11 @@ import { useThemeStore } from '../store/store'
     }
   }
 
+  const handleCheckboxChange = (event) => {
+    console.log(event.target.checked)
+    setHideRatings(event.target.checked)
+  }
+
   return (
     <header>
       <div class="container container-header">
@@ -78,6 +85,14 @@ import { useThemeStore } from '../store/store'
             {isLoggedIn() ? (
               <div>
                 <h2>Moin {name}!</h2>
+                <div class="checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    checked={hideRatings}
+                    onChange={handleCheckboxChange}
+                  />
+                  Bewertungen ausblenden
+                </div>
                 <button class="edit-button" onClick={handleEditButtonClick}>Bewertungen bearbeiten</button>
                 <button class="logout-button" onClick={handleLogout}>Abmelden</button>
               </div>
