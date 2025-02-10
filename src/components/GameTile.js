@@ -90,8 +90,13 @@ const GameTile = ({ game }) => {
             {name && !game.ratings?.[name] && (
               <button className="rating-button" onClick={openModal}>Bewerten</button>
             )}
-            <h3>Bewertungen</h3>
-            {shouldShowRatingsTable && <RatingsTable game={game} />}
+            
+            {shouldShowRatingsTable && (
+              <>
+                <h3>Bewertungen</h3>
+                <RatingsTable game={game} />
+              </>
+            )}
           </div>
           {modalGame && (
             <RatingModal
