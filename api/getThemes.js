@@ -37,28 +37,28 @@ export default async function handler(req, res) {
     // to be removed
     await collection.updateMany(
       {},
-      { $rename: { 
-          'games.ratings.Christian.total': 'games.ratings.Christian.gameplay', 
-          'games.ratings.Christian.theme': 'games.ratings.Christian.aging',
-          'games.ratings.Rene.total': 'games.ratings.Rene.gameplay', 
-          'games.ratings.Rene.theme': 'games.ratings.Rene.aging',
-          'games.ratings.Lena.total': 'games.ratings.Lena.gameplay', 
-          'games.ratings.Lena.theme': 'games.ratings.Lena.aging'
-        } 
+      { $rename: {
+          'games.$[].ratings.Christian.total': 'games.$[].ratings.Christian.gameplay', 
+          'games.$[].ratings.Christian.theme': 'games.$[].ratings.Christian.aging',
+          'games.$[].ratings.Rene.total': 'games.$[].ratings.Rene.gameplay', 
+          'games.$[].ratings.Rene.theme': 'games.$[].ratings.Rene.aging',
+          'games.$[].ratings.Lena.total': 'games.$[].ratings.Lena.gameplay', 
+          'games.$[].ratings.Lena.theme': 'games.$[].ratings.Lena.aging'
+        }
       }
     )
 
     // Add 'graphics' and 'trashiness' columns with default values for Christian, Rene, and Lena
     await collection.updateMany(
       {},
-      { $set: { 
-          'games.ratings.Christian.graphics': 'defaultValue', 
-          'games.ratings.Christian.trashiness': 'defaultValue',
-          'games.ratings.Rene.graphics': 'defaultValue', 
-          'games.ratings.Rene.trashiness': 'defaultValue',
-          'games.ratings.Lena.graphics': 'defaultValue', 
-          'games.ratings.Lena.trashiness': 'defaultValue'
-        } 
+      { $set: {
+          'games.$[].ratings.Christian.graphics': 'defaultValue', 
+          'games.$[].ratings.Christian.trashiness': 'defaultValue',
+          'games.$[].ratings.Rene.graphics': 'defaultValue', 
+          'games.$[].ratings.Rene.trashiness': 'defaultValue',
+          'games.$[].ratings.Lena.graphics': 'defaultValue', 
+          'games.$[].ratings.Lena.trashiness': 'defaultValue'
+        }
       }
     )
     //
