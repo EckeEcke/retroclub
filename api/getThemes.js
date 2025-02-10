@@ -35,45 +35,42 @@ export default async function handler(req, res) {
     const collection = db.collection('themes')
     const themes = await collection.find({}).toArray()
     // to be removed
-    await collection.updateMany(
-      {},
-      { $set: {
-          'games.ratings.Christian.gameplay': '$games.ratings.Christian.total', 
-          'games.ratings.Christian.aging': '$games.ratings.Christian.theme',
-          'games.ratings.Rene.gameplay': '$games.ratings.Rene.total', 
-          'games.ratings.Rene.aging': '$games.ratings.Rene.theme',
-          'games.ratings.Lena.gameplay': '$games.ratings.Lena.total', 
-          'games.ratings.Lena.aging': '$games.ratings.Lena.theme'
-        }
-      }
-    )
+    const cursor = await collection.find({})
+    await cursor.forEach(async (document) => {
+      document.themes.forEach((theme) => {
+        theme.games.forEach((game) => {
+          if (game.ratings?.Christian) {
+            game.ratings.Christian.gameplay = game.ratings.Christian.total
+            delete game.ratings.Christian.total
+            game.ratings.Christian.aging = game.ratings.Christian.theme
+            delete game.ratings.Christian.theme
+            game.ratings.Christian.graphics = 'defaultValue'
+            game.ratings.Christian.trashiness = 'defaultValue'
+          }
+          if (game.ratings?.Rene) {
+            game.ratings.Rene.gameplay = game.ratings.Rene.total
+            delete game.ratings.Rene.total
+            game.ratings.Rene.aging = game.ratings.Rene.theme
+            delete game.ratings.Rene.theme
+            game.ratings.Rene.graphics = 'defaultValue'
+            game.ratings.Rene.trashiness = 'defaultValue'
+          }
+          if (game.ratings?.Lena) {
+            game.ratings.Lena.gameplay = game.ratings.Lena.total
+            delete game.ratings.Lena.total
+            game.ratings.Lena.aging = game.ratings.Lena.theme
+            delete game.ratings.Lena.theme
+            game.ratings.Lena.graphics = 'defaultValue'
+            game.ratings.Lena.trashiness = 'defaultValue'
+          }
+        })
+      })
 
-    await collection.updateMany(
-      {},
-      { $unset: {
-          'games.ratings.Christian.total': '', 
-          'games.ratings.Christian.theme': '',
-          'games.ratings.Rene.total': '', 
-          'games.ratings.Rene.theme': '',
-          'games.ratings.Lena.total': '', 
-          'games.ratings.Lena.theme': ''
-        }
-      }
-    )
-
-    // Add 'graphics' and 'trashiness' columns with default values for Christian, Rene, and Lena
-    await collection.updateMany(
-      {},
-      { $set: {
-          'games.ratings.Christian.graphics': 'defaultValue', 
-          'games.ratings.Christian.trashiness': 'defaultValue',
-          'games.ratings.Rene.graphics': 'defaultValue', 
-          'games.ratings.Rene.trashiness': 'defaultValue',
-          'games.ratings.Lena.graphics': 'defaultValue', 
-          'games.ratings.Lena.trashiness': 'defaultValue'
-        }
-      }
-    )
+      await collection.updateOne(
+        { _id: document._id },
+        { $set: { themes: document.themes } }
+      )
+    })
     //
     res.status(200).json(themes)
   } catch (error) {
