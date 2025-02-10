@@ -35,16 +35,10 @@ export default async function handler(req, res) {
     const collection = db.collection('themes')
     const themes = await collection.find({}).toArray()
 
-    // Iterate through each document
-    for (const theme of themes) {
-      await collection.updateOne(
-        { _id: theme._id },
-        [
-          { $set: { games: theme.games } }, // Update the games array
-          { $unset: { themes: "" } } // Remove the themes field
-        ]
-      )
-    }
+    await collection.updateMany(
+      {}, // Match all documents
+      { $unset: { themes: "" } } // Remove the `themes` field
+    )
     res.status(200).json(themes)
   } catch (error) {
     console.error(error)
