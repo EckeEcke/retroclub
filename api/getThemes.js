@@ -37,35 +37,12 @@ export default async function handler(req, res) {
 
     // Iterate through each document
     for (const theme of themes) {
-      if (theme.games && Array.isArray(theme.games)) {
-        // Iterate through each game in the games array
-        for (const game of theme.games) {
-          if (game.ratings) {
-            // Iterate through each rater in the ratings object
-            for (const rater of Object.keys(game.ratings)) {
-              const rating = game.ratings[rater]
-              if (rating) {
-                // Rename 'total' to 'gameplay' and 'theme' to 'aging'
-                if (rating.total !== undefined) {
-                  rating.gameplay = rating.total
-                  delete rating.total
-                }
-                if (rating.theme !== undefined) {
-                  rating.aging = rating.theme
-                  delete rating.theme
-                }
-                // Add new columns 'graphics' and 'trashiness'
-                rating.graphics = 0 // Default value
-                rating.trashiness = 0 // Default value
-              }
-            }
-          }
-        }
-      }
-      // Update the document in the collection
       await collection.updateOne(
         { _id: theme._id },
-        { $set: { games: theme.games } }
+        [
+          { $set: { games: theme.games } }, // Update the games array
+          { $unset: { themes: "" } } // Remove the themes field
+        ]
       )
     }
     res.status(200).json(themes)
