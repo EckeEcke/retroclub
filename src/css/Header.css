@@ -159,3 +159,7 @@ header .checkbox-wrapper input {
   height: 2rem;
   accent-color: #68019f;
 }
+
+.checkbox-wrapper div {
+  line-height: 1;
+}

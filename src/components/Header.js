@@ -91,7 +91,7 @@ import { useThemeStore } from '../store/store'
                     checked={hideRatings}
                     onChange={handleCheckboxChange}
                   />
-                  Bewertungen ausblenden
+                  <div>Bewertungen ausblenden</div>
                 </div>
                 <button class="edit-button" onClick={handleEditButtonClick}>Bewertungen bearbeiten</button>
                 <button class="logout-button" onClick={handleLogout}>Abmelden</button>
