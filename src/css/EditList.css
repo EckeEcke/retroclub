@@ -1,3 +1,7 @@
+.edit-table {
+    overflow: auto;
+}
+
 .edit-table table {
     width: auto;
 }

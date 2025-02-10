@@ -34,8 +34,10 @@ const EditList = () => {
           <thead>
             <tr>
               <th>Game</th>
-              <th>Total</th>
-              <th>Thema</th>
+              <th>Spaß</th>
+              <th>Aging</th>
+              <th>Grafik</th>
+              <th>Trash</th>
               <th>Edit</th>
             </tr>
           </thead>
@@ -43,8 +45,10 @@ const EditList = () => {
             {filteredGames(games).map((game, index) => (
               <tr key={index + game.id}>
                 <td>{game.name}</td>
-                <td>{game.ratings[name].total}</td>
-                <td>{game.ratings[name].theme}</td>
+                <td>{game.ratings[name].gameplay}</td>
+                <td>{game.ratings[name].aging}</td>
+                <td>{game.ratings[name].graphics}</td>
+                <td>{game.ratings[name].trashiness}</td>
                 <td>
                     <button class="edit-button" onClick={() => openModal(game)}>
                         <FontAwesomeIcon icon="fa-solid fa-edit" />

@@ -4,8 +4,10 @@ import { useThemeStore } from '../store/store'
 
 const RatingModal = ({ game, isOpen, onClose }) => {
   const selectedTheme = useThemeStore((state) => state.selectedTheme)
-  const [gesamt, setGesamt] = useState('')
-  const [thema, setThema] = useState('')
+  const [gameplay, setGameplay] = useState('')
+  const [aging, setAging] = useState('')
+  const [graphics, setGraphics] = useState('')
+  const [trashiness, setTrashiness] = useState('')
   const key = useThemeStore((state) => state.key)
   const fetchThemes = useThemeStore((state) => state.fetchThemes)
 
@@ -13,8 +15,10 @@ const RatingModal = ({ game, isOpen, onClose }) => {
     event.preventDefault()
 
     const rating = {
-      total: gesamt,
-      theme: thema
+      gameplay,
+      aging,
+      graphics,
+      trashiness
     }
 
     const response = await fetch('/api/addRating', {
@@ -30,7 +34,7 @@ const RatingModal = ({ game, isOpen, onClose }) => {
 
     if (response.ok) {
       console.log('Rating added successfully')
-      fetchThemes()
+      setTimeout(() => fetchThemes(), 200)
     } else {
       console.error('Failed to add rating')
     }
@@ -47,13 +51,14 @@ const RatingModal = ({ game, isOpen, onClose }) => {
         <h2>Bewertung abgeben für {game.name}</h2>
         <img src={game.image.original_url} alt={game.name} />
         <form onSubmit={handleSubmit}>
+          <div class="inputs">
             <div class="input-wrapper">
                 <label>
-                    Gesamt:
+                    Gameplay
                     <input
                       type="number"
-                      value={gesamt}
-                      onChange={(e) => setGesamt(e.target.value)}
+                      value={gameplay}
+                      onChange={(e) => setGameplay(e.target.value)}
                       min="0"
                       max="10"
                       required
@@ -61,11 +66,11 @@ const RatingModal = ({ game, isOpen, onClose }) => {
                     />
                 </label>
                 <label>
-                    Thema:
+                    Aging
                     <input
                       type="number"
-                      value={thema}
-                      onChange={(e) => setThema(e.target.value)}
+                      value={aging}
+                      onChange={(e) => setAging(e.target.value)}
                       min="0"
                       max="10"
                       required
@@ -73,6 +78,33 @@ const RatingModal = ({ game, isOpen, onClose }) => {
                     />
                 </label>
             </div>
+            <div class="input-wrapper">
+                <label>
+                    Grafik
+                    <input
+                      type="number"
+                      value={graphics}
+                      onChange={(e) => setGraphics(e.target.value)}
+                      min="0"
+                      max="10"
+                      required
+                      placeholder="0"
+                    />
+                </label>
+                <label>
+                    Trashiness
+                    <input
+                      type="number"
+                      value={trashiness}
+                      onChange={(e) => setTrashiness(e.target.value)}
+                      min="0"
+                      max="10"
+                      required
+                      placeholder="0"
+                    />
+                </label>
+            </div>
+          </div>
           <button type="submit">Bewerten</button>
         </form>
       </div>

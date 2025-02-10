@@ -68,6 +68,13 @@
   .input-wrapper {
     display: flex;
     gap: 1rem;
+  }
+
+  .input-wrapper input {
+    text-align: center;
+  }
+
+  .inputs {
     margin-bottom: 1rem;
   }
   
